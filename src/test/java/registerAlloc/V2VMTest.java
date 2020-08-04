@@ -11,30 +11,30 @@ import static org.junit.Assert.fail;
 public class V2VMTest {
 
     private static final InputStream DEFAULT_STDIN = System.in;
-    private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private static final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-    private static final PrintStream originalOut = System.out;
-    private static final PrintStream originalErr = System.err;
+    private static final ByteArrayOutputStream outputContent = new ByteArrayOutputStream();
+    private static final ByteArrayOutputStream errorContent = new ByteArrayOutputStream();
+    private static final PrintStream ogOutput = System.out;
+    private static final PrintStream ogError = System.err;
 
     @Before
     public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
+        System.setOut(new PrintStream(outputContent));
+        System.setErr(new PrintStream(errorContent));
     }
 
     @After
     public void rollbackChangesToStdin() {
         try {
-            outContent.reset();
-            errContent.reset();
+            outputContent.reset();
+            errorContent.reset();
         } catch (Exception e) {
 
         }
 
         System.setIn(DEFAULT_STDIN);
-        System.setOut(originalOut);
-        System.setErr(originalErr);
-        System.out.println(errContent.toString());
+        System.setOut(ogOutput);
+        System.setErr(ogError);
+        System.out.println(errorContent.toString());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -76,7 +76,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -90,7 +90,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -118,7 +118,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -132,7 +132,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -146,7 +146,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 
     @Test
@@ -160,6 +160,6 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outContent.toString());
+        assertEquals("ALWAYS FAIL", outputContent.toString());
     }
 }
