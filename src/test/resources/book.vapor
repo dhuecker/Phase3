@@ -1,0 +1,10 @@
+func Main()
+    a = 0
+    l:
+    b = Add(a 1)
+    c = Add(c b)
+    a = MulS(b 2)
+    diff = LtS(a 10)
+    if diff goto :l
+    ret c
+

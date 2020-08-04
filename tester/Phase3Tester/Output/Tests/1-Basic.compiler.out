@@ -1,0 +1,10 @@
+func Main [in 0, out 0, local 2]
+local[0] = $s0
+local[1] = $s1
+$s0 = 4
+$s1 = Add($s0 2)
+PrintIntS($s1)
+$s0 = local[0]
+$s1 = local[1]
+ret
+

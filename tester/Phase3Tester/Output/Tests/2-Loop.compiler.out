@@ -1,0 +1,15 @@
+func Main [in 0, out 0, local 2]
+local[0] = $s0
+local[1] = $s1
+$s0 = 1
+goto :end
+begin:
+PrintIntS($s0)
+$s0 = MulS($s0 2)
+end:
+$s1 = LtS($s0 100)
+if $s1 goto :begin
+$s0 = local[0]
+$s1 = local[1]
+ret
+
