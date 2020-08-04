@@ -9,7 +9,7 @@ import cs132.vapor.ast.VFunction;
 
 import java.util.*;
 
-public class RegisterAllocation {
+public class RegAllocation {
 
     // General Purpose Registers
     // $s0...$s7 are callee-saved
@@ -24,7 +24,7 @@ public class RegisterAllocation {
     List<LiveRange> active;
     int stackLocation;
 
-    public RegisterAllocation(VFunction x, LiveRanges y) {
+    public RegAllocation(VFunction x, LiveRanges y) {
         currentFunction = x;
         rangesLive = y;
 

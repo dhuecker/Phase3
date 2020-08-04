@@ -5,7 +5,7 @@ import cs132.vapor.ast.VInstr.Visitor;
 
 import java.util.*;
 
-public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
+public class LRVisitor<E extends Throwable> extends Visitor<E> {
 
     VFunction currentFunction;
     List<CFGNode> lineNodes; // Each line is a node
