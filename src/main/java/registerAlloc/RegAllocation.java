@@ -14,9 +14,11 @@ public class RegAllocation {
     // General Purpose Registers
     // $s0...$s7 are callee-saved
     // $t0...$t8 are caller-saved
+    //all general purpose registers are declared as a string inside of the array GPRs
     public static String[] GPRs = {"$s0","$s1","$s2","$s3","$s4","$s5","$s6","$s7",
              "$t0","$t1","$t2","$t3","$t4","$t5","$t6","$t7","$t8"};
 
+    //setup data members for register allocation
     VFunction currentFunction;
     LiveRanges rangesLive;
 
@@ -24,6 +26,7 @@ public class RegAllocation {
     List<LiveRange> active;
     int stackLocation;
 
+    //constructor for RegAllocation
     public RegAllocation(VFunction x, LiveRanges y) {
         currentFunction = x;
         rangesLive = y;
@@ -35,6 +38,7 @@ public class RegAllocation {
         stackLocation = 0;
     }
 
+    //helping methods below
     public LiveRange getAlloc(int line, String id) {
         return rangesLive.getAlloc(line, id);
     }
@@ -131,3 +135,4 @@ public class RegAllocation {
         return stackLocation;
     }
 }
+//end RegAllocation class

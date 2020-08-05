@@ -12,15 +12,16 @@ import java.io.PrintStream;
 
 public class ParseVaporInput {
     public static VaporProgram parseVapor(InputStream in, PrintStream err) throws IOException {
+        //declare op array that contains all legal Vapor operations
         Op[] operates = {
                 Op.Add, Op.Sub, Op.MulS, Op.Eq, Op.Lt, Op.LtS,
                 Op.PrintIntS, Op.HeapAllocZ, Op.Error,
         };
-
+    //Setup for register, stack, and locals below
         String[] regs = null;
         boolean okStack = false;
         boolean okLocals = true;
-
+    //now set up vapor input program as vtree and start try/catch block
         VaporProgram Vtree;
         try {
             Vtree = VaporParser.run(new InputStreamReader(in), 1, 1,
@@ -35,3 +36,4 @@ public class ParseVaporInput {
         return Vtree;
     }
 }
+//end ParseVaporInput class

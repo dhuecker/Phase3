@@ -7,10 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class V2VM {
+
+    //main method below
     public static void main(String[] args) {
         allocRegs();
     }
 
+    //called method inside of main declaration below
     public static void allocRegs() {
         try {
             VaporProgram Vtree = ParseVaporInput.parseVapor(System.in, System.err);
@@ -77,3 +80,4 @@ public class V2VM {
         }
     }
 }
+//end V2VM class

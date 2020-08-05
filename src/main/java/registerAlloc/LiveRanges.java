@@ -39,9 +39,9 @@ public class LiveRanges {
         return null;
     }
 
-    // Helper function
     boolean inRange(LiveRange temp, int line) {
         // temp.end + 1 to deal with labels
         return (temp.begin <= line && line <= temp.end + 1);
     }
 }
+//end LiveRanges class

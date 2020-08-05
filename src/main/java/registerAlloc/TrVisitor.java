@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class TrVisitor<E extends Throwable> extends VInstr.Visitor<E> {
 
+    //setup data members for TrVisitor below
     RegAllocation currentAllocation;
     VFunction currentFunction;
 
@@ -17,10 +18,12 @@ public class TrVisitor<E extends Throwable> extends VInstr.Visitor<E> {
     List<String> takenTXRegs;
     int outCounter;
 
+    //TrVisitor simple constructor below
     public TrVisitor() {
         bufferVisitor = new ArrayList<>();
     }
 
+    //helping methods for Tr below
     public void setBuffer(int loc, String x) {
         StringBuilder tempBuilder = new StringBuilder(x);
         for (int a = 0; a < indentLevel * 4; a++)
@@ -134,6 +137,7 @@ public class TrVisitor<E extends Throwable> extends VInstr.Visitor<E> {
         setBuffer(sourceLocation, line);
     }
 
+    //visit methods below
     public void visit(VCall x) throws E {
         int sourceLocation = getRelativeLoc(x.sourcePos.line);
         LiveRange dAlloc = currentAllocation.getAlloc(sourceLocation, x.dest.toString());
@@ -308,8 +312,6 @@ public class TrVisitor<E extends Throwable> extends VInstr.Visitor<E> {
                 retTempString.append("$v0 = ").append(x.value.toString()).append("\n");
             }
         }
-
-
         // Restore used sx registers
         int counterTemp = 0;
         for (String regTemp : takenSXRegs) {
@@ -323,3 +325,4 @@ public class TrVisitor<E extends Throwable> extends VInstr.Visitor<E> {
         insertLabels();
     }
 }
+//end TrVisitor class

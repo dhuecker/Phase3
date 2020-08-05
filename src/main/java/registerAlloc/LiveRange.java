@@ -2,7 +2,8 @@ package registerAlloc;
 
 public class LiveRange {
 
-    // Used during register allocation
+    //setup data memberts for LiveRange below
+
     public String register;
     public int place;
 
@@ -41,3 +42,4 @@ public class LiveRange {
         System.out.println();
     }
 }
+//end LiveRange class

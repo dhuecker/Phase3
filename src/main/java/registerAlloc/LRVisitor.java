@@ -55,7 +55,7 @@ public class LRVisitor<E extends Throwable> extends Visitor<E> {
 
     // Computes live rangesLive on CFGNodes in lineNodes list
     public void computeNodeSets() {
-        // Add function header data into CFGNodes
+
         CFGNode functionHeaderData = new CFGNode(-1);
         for (int a = 0; a < currentFunction.params.length; a++) {
             functionHeaderData.def.add(currentFunction.params[a].ident);
@@ -148,8 +148,6 @@ public class LRVisitor<E extends Throwable> extends Visitor<E> {
             fRanges.add(r);
         }
 
-        // Make a conservative approximation and union all live rangesLive
-        // for each variable
         List<LiveRange> duplicatesList = new ArrayList<>();
         int x = 0;
         for (LiveRange r : fRanges) {
@@ -223,8 +221,6 @@ public class LRVisitor<E extends Throwable> extends Visitor<E> {
     public void visit(VMemWrite x) throws E {
         CFGNode currentNode = getNodeFromIndex(getRelativePos(x.sourcePos.line));
 
-        // defs
-
         // uses
         if (x.dest instanceof VMemRef.Global) {
             if (((VMemRef.Global) x.dest).base instanceof VAddr.Var) {
@@ -258,8 +254,6 @@ public class LRVisitor<E extends Throwable> extends Visitor<E> {
     public void visit(VBranch x) throws E {
         CFGNode currentNode = getNodeFromIndex(getRelativePos(x.sourcePos.line));
 
-        // defs
-
         // uses
         currentNode.use.add(x.value.toString());
 
@@ -271,8 +265,6 @@ public class LRVisitor<E extends Throwable> extends Visitor<E> {
     public void visit(VGoto x) throws E {
         CFGNode currentNode = getNodeFromIndex(getRelativePos(x.sourcePos.line));
 
-        // defs
-
         // uses
 
         int targetPos = ((VAddr.Label)x.target).label.getTarget().sourcePos.line;
@@ -282,14 +274,11 @@ public class LRVisitor<E extends Throwable> extends Visitor<E> {
     public void visit(VReturn x) throws E {
         CFGNode currNode = getNodeFromIndex(getRelativePos(x.sourcePos.line));
 
-        // defs
-
         // uses
         if (x.value instanceof VVarRef) {
             currNode.use.add(x.value.toString());
         }
 
-        // Does not have any successors
     }
 
     //defition of class CFG and declartion of it's members below
@@ -357,3 +346,4 @@ public class LRVisitor<E extends Throwable> extends Visitor<E> {
         }
     }
 }
+//end LRVisitor class

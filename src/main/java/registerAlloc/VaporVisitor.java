@@ -4,6 +4,8 @@ import cs132.vapor.ast.*;
 import cs132.vapor.ast.VInstr.Visitor;
 
 public class VaporVisitor<E extends Throwable> extends Visitor<E> {
+    //setup for visit methods below
+
     public void visit(VAssign x) throws E {
     }
 
@@ -28,3 +30,4 @@ public class VaporVisitor<E extends Throwable> extends Visitor<E> {
     public void visit(VReturn x) throws E {
     }
 }
+//end VaporVisitor class
