@@ -15,7 +15,7 @@ def get_javas(loc):
 
 # Gather source files and copy them to dest
 dest = './out/hw3'
-pkgs = ['./src/main/java/regalloc']
+pkgs = ['./src/main/java/registerAlloc']
 
 # Clean up old code
 if os.path.isdir(dest):
@@ -44,7 +44,7 @@ for p in pkgs:
 
 # Clean up source files
 # Remove this specific text from all files:
-text_to_remove = ['package regalloc;']
+text_to_remove = ['package registerAlloc;']
 for file in os.listdir(dest):
 	filename = os.path.join(dest, file)
 	with open(filename, "r") as f:
