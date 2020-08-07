@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="registerAlloc.V2VMTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-08-07T18:32:27" hostname="anthony-Aspire-TC-705" time="0.023">
+<testsuite name="registerAlloc.V2VMTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-08-07T20:38:01" hostname="anthony-Aspire-TC-705" time="0.021">
   <properties/>
-  <testcase name="basicTest" classname="registerAlloc.V2VMTest" time="0.023">
-    <failure message="org.junit.ComparisonFailure: expected:&lt;[ALWAYS FAIL]&gt; but was:&lt;[func Main [in 0, out 0, local 2]&#10;local[0] = $s0&#10;local[1] = $s1&#10;$s0 = 4&#10;$s1 = Add($s0 2)&#10;PrintIntS($s1)&#10;$s0 = local[0]&#10;$s1 = local[1]&#10;ret&#10;&#10;]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[ALWAYS FAIL]&gt; but was:&lt;[func Main [in 0, out 0, local 2]
+  <testcase name="basicTest" classname="registerAlloc.V2VMTest" time="0.021">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;[]&gt; but was:&lt;[func Main [in 0, out 0, local 2]&#10;local[0] = $s0&#10;local[1] = $s1&#10;$s0 = 4&#10;$s1 = Add($s0 2)&#10;PrintIntS($s1)&#10;$s0 = local[0]&#10;$s1 = local[1]&#10;ret&#10;&#10;]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[]&gt; but was:&lt;[func Main [in 0, out 0, local 2]
 local[0] = $s0
 local[1] = $s1
 $s0 = 4

@@ -48,7 +48,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 
     @Test
@@ -62,22 +62,9 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 
-    @Test
-    public void bookTest() {
-        try {
-            File inputFile = new File("./src/test/resources/book.vapor");
-            System.setIn(new FileInputStream(inputFile));
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            fail();
-        }
-
-        V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
-    }
 
     @Test
     public void binaryTreeTest() {
@@ -90,7 +77,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 
     @Test
@@ -104,7 +91,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 
     @Test
@@ -118,7 +105,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 
     @Test
@@ -132,7 +119,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 
     @Test
@@ -146,7 +133,7 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 
     @Test
@@ -160,6 +147,6 @@ public class V2VMTest {
         }
 
         V2VM.allocRegs();
-        assertEquals("ALWAYS FAIL", outputContent.toString());
+        assertEquals("", outputContent.toString());
     }
 }
