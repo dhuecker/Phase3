@@ -1,9 +1,8 @@
 package registerAlloc;
 
-/*
- * Algorithm based on MASSIMILIANO POLETTO & VIVEK SARKAR Linear Scan Register Allocation
- * http://web.cs.ucla.edu/~palsberg/course/cs132/linearscan.pdf
- */
+ // Algorithm based on MASSIMILIANO POLETTO & VIVEK SARKAR Linear Scan Register Allocation
+ //link is here http://web.cs.ucla.edu/~palsberg/course/cs132/linearscan.pdf
+
 
 import cs132.vapor.ast.VFunction;
 

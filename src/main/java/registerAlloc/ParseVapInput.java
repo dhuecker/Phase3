@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-public class ParseVaporInput {
+public class ParseVapInput {
     public static VaporProgram parseVapor(InputStream in, PrintStream err) throws IOException {
         //declare op array that contains all legal Vapor operations
         Op[] operates = {
