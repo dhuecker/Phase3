@@ -16,7 +16,7 @@ public class V2VM {
     //called method inside of main declaration below
     public static void allocRegs() {
         try {
-            VaporProgram Vtree = ParseVaporInput.parseVapor(System.in, System.err);
+            VaporProgram Vtree = ParseVapInput.parseVapor(System.in, System.err);
             LRVisitor<Exception> rVisitor = new LRVisitor();
 
             // One set of rangesLive per function
