@@ -10,7 +10,6 @@ import java.util.*;
 
 public class RegAllocation {
 
-    // General Purpose Registers
     // $s0...$s7 are callee-saved
     // $t0...$t8 are caller-saved
     //all general purpose registers are declared as a string inside of the array GPRs
@@ -30,7 +29,7 @@ public class RegAllocation {
         currentFunction = x;
         rangesLive = y;
 
-        // All registers are available initially
+        // All registers are available at first
         freePlace = new ArrayList<>();
         freePlace.addAll(Arrays.asList(GPRs));
         active = new ArrayList<>();

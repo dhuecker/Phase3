@@ -32,7 +32,6 @@ public class V2VM {
                 rangesLive.add(rVisitor.getCurrentRanges());
             }
 
-            // For each function use LSRA to allocate registers
             List<RegAllocation> allocs = new ArrayList<>();
             for (int a = 0; a < Vtree.functions.length; a++) {
                 RegAllocation currentAlloc = new RegAllocation(Vtree.functions[a], rangesLive.get(a));
@@ -40,7 +39,7 @@ public class V2VM {
                 allocs.add(currentAlloc);
             }
 
-            // Print out the data section
+
             for (int a = 0; a < Vtree.dataSegments.length; a++) {
                 System.out.println("const " + Vtree.dataSegments[a].ident);
                 for (int b = 0; b < Vtree.dataSegments[a].values.length; b++) {
@@ -49,7 +48,7 @@ public class V2VM {
                 System.out.println("");
             }
 
-            // Translate function to use registers instead of locals
+
             TrVisitor<Exception> trVisitor = new TrVisitor<>();
             List<List<String>> bufferTemp = new ArrayList<>();
             for (int a = 0; a < Vtree.functions.length; a++) {

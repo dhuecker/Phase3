@@ -115,6 +115,9 @@ public class TrVisitor<E extends Throwable> extends VInstr.Visitor<E> {
     public int getRelativeLoc(int srcLoc) {
         return (srcLoc - currentFunction.sourcePos.line) - 1;
     }
+    
+    //visit methods below
+
 
     public void visit(VAssign x) throws E {
         int sourceLocation = getRelativeLoc(x.sourcePos.line);
@@ -137,7 +140,7 @@ public class TrVisitor<E extends Throwable> extends VInstr.Visitor<E> {
         setBuffer(sourceLocation, line);
     }
 
-    //visit methods below
+
     public void visit(VCall x) throws E {
         int sourceLocation = getRelativeLoc(x.sourcePos.line);
         LiveRange dAlloc = currentAllocation.getAlloc(sourceLocation, x.dest.toString());
